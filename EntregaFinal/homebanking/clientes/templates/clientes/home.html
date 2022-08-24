@@ -1,0 +1,15 @@
+{% extends 'side-bar-layout.html' %}
+
+
+{% block content %}
+    <div class="container mx-auto">
+        <h1>Hola, {{ request.user.first_name }} {{ request.user.last_name }} </h1>
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Cuenta Ahorro</h3>
+                <h5 class="card-title">Saldo</h5>
+                <p class="card-text">{{ cuenta.get_display_balance }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

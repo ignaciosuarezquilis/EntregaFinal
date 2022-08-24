@@ -1,0 +1,127 @@
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  font-family: "Roboto Condensed", sans-serif;
+}
+html {
+  height: -webkit-fill-available;
+}
+
+main {
+  height: 100vh;
+  height: -webkit-fill-available;
+  max-height: 100vh;
+  overflow-x: auto;
+}
+
+/* General */
+.titulo-seccion {
+  margin: 30px 0px 0px 0px;
+  color: #02568a;
+}
+
+/* Menu Lateral*/
+
+#sidebar {
+  height: 100vh;
+}
+
+#menu-lateral li {
+  padding: 5px;
+}
+
+#menu-lateral span {
+  margin: 0px 0px 0px 15px;
+}
+
+/* Navegador*/
+
+#notifications {
+  margin-right: 1.5rem;
+}
+
+#encabezado-color {
+  background: linear-gradient(to bottom, #02568a, #000000);
+}
+
+#boton-ayuda {
+  background-color: whitesmoke;
+  color: #02568a;
+}
+
+.img-perfil {
+  width: 80%;
+}
+
+.campana {
+  font-size: 1.7em;
+}
+
+.eyes {
+  padding-left: 1rem;
+}
+
+.dropdown-item:hover {
+  background-color: #02568a;
+}
+
+.linea-vertical {
+  color: #ffffff;
+}
+
+/* Cuentas*/
+
+#fila-cuentas {
+  position: relative;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.cuenta {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.monto {
+  font-size: xx-large;
+  margin-bottom: 20px;
+}
+
+.infocuenta {
+  color: rgb(200, 200, 200);
+  font-style: italic;
+}
+
+/* Ultimos movimientos*/
+
+#ultimos-movimientos {
+  margin: 15px 15px 15px 0px;
+}
+
+#ultimos-movimientos tbody {
+  background: linear-gradient(to right, #ffffff, #51bafc70);
+}
+
+/* Contactos frecuentes*/
+
+#contactos-frecuentes {
+  margin: 15px 15px 15px 0px;
+}
+
+.card-contacto {
+  background: linear-gradient(to right, #ffffff, #51bafc70);
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding-top: 15px;
+}
+
+#boton-transferir {
+  background: #282828;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  color: #ffffff;
+  display: flex;
+  margin: 25px 0px 10px 0px;
+  padding: 7px;
+  justify-content: center;
+}

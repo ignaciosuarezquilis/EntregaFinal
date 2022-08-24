@@ -1,0 +1,38 @@
+{% extends 'side-bar-layout.html' %}
+
+
+{% block content %}
+    <div class="container mx-auto">
+        <h1>Prestamos</h1>
+        <form style="width: 23rem;" method="POST" class="mt-sm-5">
+            {% csrf_token %}
+            <h3 class="fw-normal mt-5 mb-3 pb-3" style="letter-spacing: 1px;">Solicitá tu Prestamo</h3>
+
+            <select class="form-select mb-4" aria-label="Default select example" name="tipo" required>
+                <option disabled selected>Tipo de Prestamo</option>
+                {% for tipo in tipos %}
+                    <option value="{{ tipo.id }}">{{ tipo.nombre }}</option>
+                {% endfor %}
+            </select>
+
+
+            <div class="form-outline mb-4">
+                <input type="date" id="form2Example28" class="form-control form-control-lg" name="fecha" required/>
+                <label class="form-label" for="form2Example28">Inicio de Prestamo</label>
+            </div>
+
+            <div class="form-outline mb-4">
+                <input type="number" min="0" step="any" id="form2Example28" class="form-control form-control-lg"
+                       name="monto" required/>
+                <label class="form-label" for="form2Example28">Monto</label>
+            </div>
+
+
+            <div class="pt-1 mb-4">
+                <button class="btn btn-info btn-lg btn-block" type="submit">Solicitar</button>
+            </div>
+
+
+        </form>
+    </div>
+{% endblock %}

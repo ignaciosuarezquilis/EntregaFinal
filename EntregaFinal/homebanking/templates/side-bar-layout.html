@@ -1,0 +1,102 @@
+{% extends 'mdb.html' %}
+
+{% block title %}Me{% endblock %}
+
+{% block body-tag %}
+    style="height: 100vh;"
+    class="d-flex flex-column"
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-2 col-xl-2 px-sm-2 px-0 bg-dark d-none d-lg-block ">
+                <div class="navbar-dark d-flex flex-column align-items-center align-items-sm-start flex-shrink-0 p-3 vh-100 ">
+                    <ul class="navbar-nav flex-column fs-5 mb-sm-auto mb-0 align-items-center align-items-sm-start">
+                        <a href="/"
+                           class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                            <span class="fs-4">ITBANK</span>
+                        </a>
+                        <hr/>
+                        <li class="nav-item">
+                            <a
+                                    href="{% url 'homebanking' %}"
+                                    class="nav-link text-light active fw-bold"
+                                    aria-current="page"
+                            >
+                                <i class="fa-solid fa-house-chimney"></i>
+                                <span>Inicio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-light fw-bold">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                                <span>Cuentas</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-light fw-bold">
+                                <i class="fa-solid fa-credit-card"></i>
+                                <span>Tarjetas</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-light fw-bold">
+                                <i class="fas fa-exchange-alt"></i>
+                                <span>Transferencias</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-light fw-bold">
+                                <i class="fa-solid fa-dollar-sign"></i>
+                                <span>Pagos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'prestamos' %}" class="nav-link text-light fw-bold">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                                <span>Prestamos</span>
+                            </a>
+                        </li>
+                        <li class="mt-5">
+                            <a href="{% url 'logout' %}" class="btn btn-primary text-light fw-bold">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                <span>Cerrar Sesión</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col py-5">
+                {% block messages %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div id="alert"
+                                 class="alert
+                                        {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                                         alert-primary
+                                        {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+                                         alert-warning
+                                        {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                                         alert-success
+                                        {% else %}
+                                         alert-danger
+                                        {% endif %}
+                                         w-50 mx-auto text-center
+                                         d-flex justify-content-center align-items-center
+                                        "
+                                 role="alert">
+                                <div class="fw-bold">{{ message }}</div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endblock %}
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
